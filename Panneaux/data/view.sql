@@ -30,7 +30,7 @@ from journale_etudiant join section_classe_panneau on journale_etudiant.id_class
     SELECT DISTINCT
     date_heure, statut, id_section, ROUND(AVG(nbr_etudiant) OVER (PARTITION BY date_heure, statut, id_section)) 
     AS moyenne_etudiant FROM journale_etudiant JOIN section_classe_panneau 
-    ON journale_etudiant.id_classe = section_classe_panneau.id_classe;
+    ON journale_etudiant.id_classe = section_classe_panneau.id_classe order by date_heure ;
 
 
     
