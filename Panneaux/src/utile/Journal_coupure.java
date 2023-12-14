@@ -50,7 +50,7 @@ public class Journal_coupure{
     }
 
     //fonction prevision coupure
-    public Timestamp GetPrevisionCoupure()
+    public Timestamp GetPrevisionCoupure(Timestamp vraiCoupure)
     {
         Timestamp prevision = new Timestamp(vraieCoupure.getTime()); 
         int valeurmin = 0; 
@@ -59,16 +59,16 @@ public class Journal_coupure{
         while (valeurmin <= valeurmax) 
         {
             int valeur_intermediaire = (valeurmin + valeurmax) / 2; 
-            int difference = (milieu * 60 *1000) - (vraieCoupure.getHours() * 60 * 60 * 1000);
+            int difference = (valeur_intermediaire * 60 *1000) - (vraieCoupure.getHours() * 60 * 60 * 1000);
             
             if (difference == 0) {
                 break; 
             } else if (difference < 0) {
                 prevision.setTime(prevision.getTime() + (60 *  1000)); 
-                valeurmin = milieu + 1;
+                valeurmin = valeur_intermediaire + 1;
             } else {
                 prevision.setTime(prevision.getTime() - (60 * 1000)); 
-                valeurmax = milieu - 1; 
+                valeurmax = valeur_intermediaire - 1; 
             }
         }
         
