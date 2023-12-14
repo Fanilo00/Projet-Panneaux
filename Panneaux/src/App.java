@@ -9,7 +9,8 @@ public class App {
             // Journal_lumiere j = new Journal_lumiere();
             // Journal_lumiere[] lumiere = j.niveau_lumiere();
 
-            
+            Panneau p = new Panneau();
+            Panneau[] puissance_panneau = p.puissance_total_panneau();
 
 
             

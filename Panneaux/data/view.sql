@@ -40,4 +40,8 @@ from journale_etudiant join section_classe_panneau on journale_etudiant.id_class
     WHERE EXTRACT(DOW FROM date_heure_lumiere) = 3; -- 3 représente le mercredi
 
 
+
+--consommation
+
+
     
