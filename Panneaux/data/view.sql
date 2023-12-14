@@ -4,17 +4,11 @@ select id_section,panneau.id_panneau,puissance_panneau,id_classe
  from section_classe_panneau 
 join panneau on panneau.id_panneau=section_classe_panneau.id_panneau;
 
-
-
 -- puissance des panneau*nombre de panneau PAR SECTION
 create or replace view puissance_total_panneau_par_section as 
 SELECT id_section, puissance_panneau * COUNT(puissance_panneau) AS total_puissance
 FROM puissance_panneau_par_section
 GROUP BY id_section, puissance_panneau;
-
-
-
-
 
 --puissance de batterie par section 
 create or replace view puissance_batterie_par_section as
@@ -26,7 +20,6 @@ create or replace view puissance_total_batterie_par_Section as
 select id_section,puissance_batterie* COUNT(puissance_batterie) as total_puissance_batterie
 from puissance_batterie_par_section
 group by id_section,puissance_batterie;
-
 
 create or replace view view_etudiant as 
 select journale_etudiant.id_journal_etudiant,date_heure,statut,nbr_etudiant,journale_etudiant.id_classe,id_section 
