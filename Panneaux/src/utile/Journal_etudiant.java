@@ -1,6 +1,5 @@
 package utile;
 import java.sql.Timestamp;
-import java.util.Objects;
 
 public class Journal_etudiant {
     int id_journal_etudiant;

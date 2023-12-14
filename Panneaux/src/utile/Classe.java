@@ -1,5 +1,4 @@
 package utile;
-import java.util.Objects;
 
 public class Classe{
     int id_classe;   
