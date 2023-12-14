@@ -1,5 +1,12 @@
 package utile;
 
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Section{
     int id_section;
     String nom_section;
@@ -30,5 +37,8 @@ public class Section{
         this.id_section = id_section;
         this.nom_section = nom_section;
     }
+
+
+
 
 }

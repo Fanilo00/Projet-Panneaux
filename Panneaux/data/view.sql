@@ -33,4 +33,11 @@ from journale_etudiant join section_classe_panneau on journale_etudiant.id_class
     ON journale_etudiant.id_classe = section_classe_panneau.id_classe order by date_heure ;
 
 
+    --hilaina am prevision
+    create or replace view moy_etu_mercredi as 
+    SELECT *
+    FROM journale_lumiere
+    WHERE EXTRACT(DOW FROM date_heure_lumiere) = 3; -- 3 représente le mercredi
+
+
     
