@@ -8,7 +8,7 @@ create table batterie
 insert into batterie(puissance_batterie) values(19200);
 
 -- puissance panneau:35000W
-create table panneau
+create table pStranneau
 (
     id_panneau serial primary key,
     puissance_panneau int,
