@@ -1,3 +1,5 @@
+import utile.Journal_coupure;
+import utile.Journal_etudiant;
 import utile.Journal_lumiere;
 import utile.Panneau;
 
@@ -18,8 +20,11 @@ import java.sql.Timestamp;
             // Journal_lumiere j = new Journal_lumiere();
             // Journal_lumiere[] lumiere = j.niveau_lumiere();
 
-            Panneau p = new Panneau();
-            Panneau[] puissance_panneau = p.puissance_total_panneau();
+            Journal_coupure j = new Journal_coupure();
+            Journal_coupure[] get_coupure = j.select_journale_coupure();
+
+            // Journal_etudiant etu = new Journal_etudiant();
+            // Journal_etudiant[] j_etu = etu.journale_etudiant_matin();
 
             // Timestamp prevision = journal.estimationCoupure(vraieCoupure);
             // System.out.println("La prévision de coupure est : " + prevision);
