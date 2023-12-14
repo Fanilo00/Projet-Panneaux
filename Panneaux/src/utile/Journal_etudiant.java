@@ -58,5 +58,6 @@ public class Journal_etudiant {
         this.statut = statut;
         this.id_classe = id_classe;
     }
+
     
 }

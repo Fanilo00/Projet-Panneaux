@@ -145,4 +145,6 @@ public class Panneau {
         return resultatList.toArray(new Panneau[resultatList.size()]);
 
     }
+   
+
 }
