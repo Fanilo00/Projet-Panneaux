@@ -1,3 +1,4 @@
+import utile.Consommation;
 import utile.Journal_coupure;
 import utile.Journal_etudiant;
 import utile.Journal_lumiere;
@@ -25,6 +26,12 @@ import java.sql.Timestamp;
 
             // Journal_etudiant etu = new Journal_etudiant();
             // Journal_etudiant[] j_etu = etu.journale_etudiant_matin();
+
+            Consommation cons = new Consommation();
+            cons.besoin_etudiant();
+
+            // Panneau p = new Panneau();
+            // Panneau[] panneau = p.puissance_total_panneau();
 
             // Timestamp prevision = journal.estimationCoupure(vraieCoupure);
             // System.out.println("La prévision de coupure est : " + prevision);

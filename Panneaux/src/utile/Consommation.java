@@ -34,51 +34,48 @@ public class Consommation
 
 
 
-    public Consommation besoin_etudiant()
-    {
+    public Consommation besoin_etudiant() {
         Consommation cons = new Consommation();
-
-        try 
-        {
+    
+        try {
             Journal_etudiant journal_etudiant = new Journal_etudiant();
             Journal_etudiant[] journale_etudiant_matin = journal_etudiant.journale_etudiant_matin();
             Journal_etudiant[] journal_etudiants_aprem = journal_etudiant.journale_etudiant_aprem();
-
+    
             Journal_coupure journal_coupure = new Journal_coupure();
             Journal_coupure[] get_heure_coupure = journal_coupure.select_journale_coupure();
-
-            int min = 0 ;
-            int max = 100 ; 
-
-            while (min <= max) 
+    
+            Panneau p = new Panneau();
+            Panneau[] puissance_panneau = p.puissance_total_panneau();
+    
+            int min = 0;
+            int max = 100;
+    
+            for (int i = 0; i < puissance_panneau.length; i++) 
             {
-                int valeur_intermediaire = (min + max)/2;
-                for (int i = 0; i < journale_etudiant_matin.length; i++) {
-                    for (int j = 0; j < journal_etudiants_aprem.length; j++) {
-                        for (int k = 0; k < get_heure_coupure.length; k++) {
-                            int matine = journale_etudiant_matin[i].getNbr_etudiant();
-                            int aprem = journal_etudiants_aprem[i].getNbr_etudiant();
-                            Time heure = get_heure_coupure[k].getHeure_coupure_vrai();
-
-                            double consommation = matine * valeur_intermediaire + aprem*(100 - valeur_intermediaire);
-                            
-                            
-                        }
+                double puissance_panneau_total = puissance_panneau[i].getNiveau(); 
+                while (min <= max) 
+                {
+                    int valeur_intermediaire = (min+max)/2;
+                    for (int j = 0; j < journale_etudiant_matin.length; j++) 
+                    {
+                        int besoin_matin = valeur_intermediaire * journale_etudiant_matin[j].getNbr_etudiant();
                         
-                    }
-                }   
+                        for (int k = 0; k < journal_etudiants_aprem.length; k++) {
+                            int besoin_aprem = valeur_intermediaire *  journal_etudiants_aprem[k].getNbr_etudiant();
+                            
+                            int besoin_total = besoin_matin + besoin_aprem;
+                        }
+                    }    
+                }
             }
-
-
-
-        } 
-        catch (Exception e) {
-            // TODO: handle exception
+            
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
+    
         return cons;
     }
-
+    
  
 }
