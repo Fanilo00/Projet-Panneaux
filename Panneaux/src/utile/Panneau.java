@@ -29,12 +29,12 @@ public class Panneau {
         id_batterie = id_batterie;
     }
 
-    public Panneaux() {
+    public Panneau() {
     }
 
-    public Panneaux(int id_panneau, int puissance_panneau, int id_batterie) {
-        id_panneau = id_panneau;
-        puissance_panneau = puissance_panneau;
-        id_batterie = id_batterie;
+    public Panneau(int id_panneau, int puissance_panneau, int id_batterie) {
+       this.setId_panneau(id_panneau);
+       this.setPuissance_panneau(puissance_panneau);
+       this.setId_Batterie(id_batterie);
     }
 }

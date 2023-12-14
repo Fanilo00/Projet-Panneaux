@@ -29,6 +29,4 @@ public class Classe{
     public void setNom_claee(String nom_claee) {
         this.nom_claee = nom_claee;
     }
-    }
-
 }
