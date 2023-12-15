@@ -121,14 +121,19 @@ public class Panneau {
                 for (int k = 0; k < niveau_lumiere.length; k++) 
                 {
                    int panneau = puissance_panneau[i].getPuissance_panneau();
+                   double cast_panneau = (double)panneau;
                    double lumiere = niveau_lumiere[k].getNiveau();
+
+                //    System.out.println(cast_panneau);
+
+                //    System.out.println(lumiere);
                     
-                    double puissance_total_panneau = panneau * lumiere;
+                    double puissance_total_panneau = cast_panneau * lumiere;
 
                     Panneau panneau_total_puissance = new Panneau(puissance_total_panneau);
                     resultatList.add(panneau_total_puissance);
 
-                    System.out.println(panneau_total_puissance.getPuissance_panneau());
+                    System.out.println(niveau_lumiere[k].getDate_heure_lumiere()+" "+panneau_total_puissance.getNiveau());
                 }
             }
 

@@ -77,7 +77,7 @@ public class Journal_lumiere{
                     Journal_lumiere niveau_lumiere = new Journal_lumiere(date,niveau);
                     resultatList.add(niveau_lumiere);
 
-                    System.out.println(niveau_lumiere.getNiveau());
+                    //System.out.println(niveau_lumiere.getNiveau());
 
                 }
             }
